@@ -27,6 +27,24 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
+import Swiper from 'swiper/bundle';
+
+// import Swiper styles
+import 'swiper/swiper-bundle.css';
+
+// init Swiper:
+const swiper = new Swiper('.swiper-container', {
+    effect: 'fade',
+    direction: 'vertical',
+    autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    fadeEffect: {
+        crossFade: true
+    },
 });

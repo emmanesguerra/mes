@@ -1,5 +1,4 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Ramaraja&family=Roboto&display=swap');
 
 // Variables
 @import 'variables';
@@ -7,9 +6,28 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Fonts
+@import url('/plugins/fontawesome-5.14.0-web/css/all.css');
+
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Aref Ruqaa', sans-serif;
+}
+h1 {
+    font-size: 3.2rem;
+}
+h2 {
+    font-size: 2.3rem;
+}
+h3 {
+    font-size: 1.7rem;
+}
+
 nav {
-    background-color: $brown-dark;
-    
     a.navbar-brand, a.nav-link {
         color: orange;
     }
@@ -20,58 +38,320 @@ nav {
     color: #fff;
 }
 
-.left-panel {
+* {
+    color: $primary;
+}
+
+.topnav {
+    float: left;
+    width: 100%;
+    background: #009641;
     
-    .card {
-        border: 1px solid $brown-light;
-        border-radius: 0;
-    
-        .card-header {
-            background-color: $brown-light;
-            border-radius: 0;
-            color: $orange;
-            padding: .5rem 1.25rem;
+    span {
+        color: #79d87c;
+        
+        i {
+            color: inherit;
         }
+    }
     
-        .card-body {
-            padding: 0;
+    ul  {
+        float: right;
+        margin-bottom: 0;
+        
+        li {
+            display: inline;
+            padding: 10px;
             
-            .admin-menu {
-                padding: 0;
-                margin: 0;
+            a {
+                color: #79d87c;
                 
-                li {
-                    display: block;
-                    margin: 0;
-                    padding: 0;
-                    border-bottom: 1px solid $brown-light;
-                    
-                    a {
-                        margin: .25rem 0;
-                        padding: 0 1.25rem;
-                        color: #000;
-                    }
-                }
-                
-                li:last-child {
-                    border-bottom: 0;
+                &:hover {
+                    color: #fff;
+                    text-decoration: none;
                 }
             }
         }
     }
 }
 
-.admin-footer {
-    background-color: $brown-dark;
-    color: #fff;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.header {
+    float: left;
     width: 100%;
-    padding: .35rem;
+    background: #fff;
     
-    p {
-        font-size: 11px;
-        margin: 0;
+    .logo {
+        font: 1.6rem 'Aref Ruqaa', sans-serif;
+        color: $primary;
+        line-height: 20px;
+        
+        img {
+            height: 65px;
+            margin-right: 10px;
+        }
+        
+        span {
+            color: $primary;
+            
+            span {
+                color: #009641;
+            }
+        }
+        
+        &:hover {
+            text-decoration: none;
+        }
     }
+}
+
+#mainnav {    
+    .navbar-nav {        
+        .nav-item {            
+            .nav-link {
+                color: $primary;
+                font-size: 16px;
+                font-weight: bolder;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                
+                &:hover {
+                    color: #009641;
+                }
+            }
+        }
+    }
+}
+.banner {
+    float: left;
+    width: 100%;
+    height: 75vh;
+    background: #009641;
+    
+    .banner-container {
+        float: left;
+        width: 100%;
+        height: 100%;
+    
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+        }
+    }
+} 
+.forthrow {
+    float: left;
+    width: 100%;
+    
+    .box {
+        background: #fff;
+        border-radius: 2px 2px 0 0;
+        box-shadow: #443939 0 0 10px;
+        margin-top: -70px;
+        z-index: 10;
+        padding: 30px 4rem;
+        
+        i {
+            float: left;
+            font-size: 2rem;
+            margin-right: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+.fifthrow {
+    float: left;
+    width: 100%;
+    background: url('/images/24872.jpg') no-repeat center center;
+    background-size: 100%;
+    
+    .quotes {
+        section {
+            p {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+.sixthrow {
+    float: left;
+    width: 100%;
+    color: #e6e6e6;
+    padding-bottom: 50px;
+    
+    .newscontainer {
+        background: #fff;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    
+        h2 {
+            color: #000;
+        }
+        
+        .newslistcontainer {
+            float: left;
+            max-height: 400px;
+            overflow-y: auto;
+        
+            section {
+                display: block;
+                margin: 1.5rem 0;
+                border-bottom: 1px solid #2c692d;
+                
+                &:last-child {
+                    border-bottom: 0;
+                }
+
+                h3 {
+                    margin-bottom: 20px;
+                    
+                    a {
+                        color: #2c692d;
+                    }
+                }
+                .date {
+                    display: block;
+                    font-size: 14px;
+                }
+                p {
+                    color: #333;
+                    font-size: 17px;
+                    margin-bottom: 0px;
+                }
+                .readmore {
+                    display: block;
+                    width: 100%;
+                    text-align: right;
+
+                    a {
+                        color: #2c692d;
+                        text-transform: uppercase;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .subscribe {
+        background: #1a2742;
+        border-radius: 2px;
+        box-shadow: #1a2742 0 0 10px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        color: #fff;
+        text-align: center;
+        
+        i {
+            color: #fff;
+            font-size: 85px;
+        }
+        
+        form {
+            display: block;
+            margin: 30px 0px 15px;
+        }
+        
+        h3, h4 {
+            color: #fff;
+        }
+        
+        .form-control {
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 0;
+            color: #94a8d1;
+            background-color: #fff;
+        }
+        .btn {
+            width: 100%;
+            font-size: 20px;
+            padding: 7px 0;
+            border-radius: 0;
+            background-color: #3db166;
+            color: #fff;
+        }
+    }
+}
+.sitemap {
+    float: left;
+    width: 100%;
+    background: #232323;
+    padding: 40px 0;
+    
+    .contact {
+        color: #ababab;
+        
+        h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #ababab;
+            font-size: 16px;
+        }
+        .link {
+            font-size: 16px;
+            display: block;
+            color: #fff;
+        }
+    }
+}
+
+footer {
+    float: left;
+    width: 100%;
+    background: #202020;
+    padding: 30px 0;
+    
+    span {
+        color: #838383;
+        display: block;
+        
+        a {
+           color: #fff; 
+           
+           &:hover {
+                color: #fff; 
+           }
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 18px;
+}
+::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
 }
