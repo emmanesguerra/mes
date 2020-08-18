@@ -1,0 +1,77 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+nav {
+    background-color: $brown-dark;
+    
+    a.navbar-brand, a.nav-link {
+        color: orange;
+    }
+}
+
+.btn-primary {
+    background-color: orange;
+    color: #fff;
+}
+
+.left-panel {
+    
+    .card {
+        border: 1px solid $brown-light;
+        border-radius: 0;
+    
+        .card-header {
+            background-color: $brown-light;
+            border-radius: 0;
+            color: $orange;
+            padding: .5rem 1.25rem;
+        }
+    
+        .card-body {
+            padding: 0;
+            
+            .admin-menu {
+                padding: 0;
+                margin: 0;
+                
+                li {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                    border-bottom: 1px solid $brown-light;
+                    
+                    a {
+                        margin: .25rem 0;
+                        padding: 0 1.25rem;
+                        color: #000;
+                    }
+                }
+                
+                li:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.admin-footer {
+    background-color: $brown-dark;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: .35rem;
+    
+    p {
+        font-size: 11px;
+        margin: 0;
+    }
+}

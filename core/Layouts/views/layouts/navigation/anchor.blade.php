@@ -1,0 +1,1 @@
+<a class="{{ $anchor }}" href="{{ url($page->url) }}">{{ $page->name }}</a>
