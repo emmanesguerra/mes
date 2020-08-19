@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Schema;
 
 use Core\Observers\BaseObserver;
 
+use App\Model\Slider;
+use App\Observers\SliderObserver;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -31,5 +34,7 @@ class AppServiceProvider extends ServiceProvider
         
         $baseobserver = new BaseObserver();
         $baseobserver->init();
+        
+        Slider::observe(SliderObserver::class);
     }
 }

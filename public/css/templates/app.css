@@ -11036,10 +11036,39 @@ nav a.nav-link {
   height: 100%;
 }
 
-.banner .banner-container .swiper-container img {
+.banner .banner-container .swiper-container .swiper-slide .container {
+  position: relative;
   width: 100%;
-  height: auto;
-  text-align: center;
+  height: 100%;
+}
+
+.banner .banner-container .swiper-container .swiper-slide .container .slider-msg {
+  position: absolute;
+  z-index: 10;
+  float: left;
+  max-width: 600px;
+  padding: 3rem 5rem;
+  background: #01842f;
+  box-shadow: #000 0 0 15px;
+  opacity: 0.7;
+}
+
+.banner .banner-container .swiper-container .swiper-slide .container .slider-msg .slidetitle {
+  font-family: "Aref Ruqaa", sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 10px 0 15px;
+  display: block;
+}
+
+.banner .banner-container .swiper-container .swiper-slide .container .slider-msg p {
+  font-size: 18px;
+  color: #fff;
+}
+
+.banner .banner-container .swiper-container .swiper-slide .container .slider-msg .readmore {
+  font-size: 14px;
+  color: #fff;
 }
 
 .forthrow {
@@ -11135,6 +11164,8 @@ nav a.nav-link {
   display: block;
   width: 100%;
   text-align: right;
+  padding-right: 20px;
+  margin: 20px 0;
 }
 
 .sixthrow .newscontainer .newslistcontainer section .readmore a {

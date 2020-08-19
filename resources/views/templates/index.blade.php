@@ -42,18 +42,7 @@
         <div class="swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background: url('/images/school.jpg') no-repeat center center; background-size: 100%;">
-
-                </div>
-                <div class="swiper-slide" style="background: url('/images/school2.jpg') no-repeat center center; background-size: 100%;">
-
-                </div>
-                <div class="swiper-slide" style="background: url('/images/school2_1.jpg') no-repeat center center; background-size: 100%;">
-
-                </div>
-                <div class="swiper-slide" style="background: url('/images/students2_n.jpg') no-repeat top center; background-size: 100%;">
-
-                </div>
+                {!! $Sliders !!}
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>

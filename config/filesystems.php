@@ -94,6 +94,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'sliders' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/sliders'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*
