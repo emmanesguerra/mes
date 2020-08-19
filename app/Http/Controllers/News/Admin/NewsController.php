@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    public $displayAdmin = true;
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +17,50 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.modules.news.index');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function data(Request $request)
+    {
+        $tablecols = [
+            0 => ['news.id'],
+            1 => ['news_categories.name'],
+            2 => ['news.title'],
+            3 => ['news.short_description'],
+            4 => ['news.image'],
+            5 => ['news.updated_at'],
+        ];
+        
+        $filteredmodel = DB::table('news')
+                ->leftjoin('news_categories', 'news_categories.id', '=', 'news.category_id');
+        if($request->isTrashed == 'true') {
+            $filteredmodel->whereNotNull('news.deleted_at');
+        } else {
+            $filteredmodel->whereNull('news.deleted_at');
+        }
+        $filteredmodel->select(DB::raw("news.id, 
+                    news_categories.name, 
+                    news.title, 
+                    news.short_description,
+                    news.image, 
+                    news.image_alt, 
+                    news.updated_at")
+            );
+        
+        $modelcnt = $filteredmodel->count();
+        
+        $data = DataTables::DataTableFilters($filteredmodel, $request, $tablecols, $hasValue, $totalFiltered);
+        
+        return response(['data'=> $data,
+            'draw' => $request->draw,
+            'recordsTotal' => ($hasValue)? $data->count(): $modelcnt,
+            'recordsFiltered' => ($hasValue)? $totalFiltered: $modelcnt], 200);
     }
 
     /**

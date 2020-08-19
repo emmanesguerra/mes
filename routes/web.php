@@ -32,5 +32,23 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::delete('/forcedelete/{id?}', '\App\Http\Controllers\Quotation\Admin\QuotationController@forcedelete')->name('quotes.forcedelete');
         });
         Route::resource('quotes','\App\Http\Controllers\Quotation\Admin\QuotationController');
+        
+        Route::prefix('news')->group(function () {
+            Route::get('/data', '\App\Http\Controllers\News\Admin\NewsController@data')->name('news.data');
+            Route::get('/trashed', '\App\Http\Controllers\News\Admin\NewsController@trashed')->name('news.trashed');
+            Route::get('/restore/{id?}', '\App\Http\Controllers\News\Admin\NewsController@restore')->name('news.restore');
+            Route::post('/restore/{id}', '\App\Http\Controllers\News\Admin\NewsController@processrestore')->name('news.processrestore');
+            Route::delete('/forcedelete/{id?}', '\App\Http\Controllers\News\Admin\NewsController@forcedelete')->name('news.forcedelete');
+        });
+        Route::resource('news','\App\Http\Controllers\News\Admin\NewsController');
+        
+        Route::prefix('newscategory')->group(function () {
+            Route::get('/data', '\App\Http\Controllers\News\Admin\NewsCategoryController@data')->name('newscategory.data');
+            Route::get('/trashed', '\App\Http\Controllers\News\Admin\NewsCategoryController@trashed')->name('newscategory.trashed');
+            Route::get('/restore/{id?}', '\App\Http\Controllers\News\Admin\NewsCategoryController@restore')->name('newscategory.restore');
+            Route::post('/restore/{id}', '\App\Http\Controllers\News\Admin\NewsCategoryController@processrestore')->name('newscategory.processrestore');
+            Route::delete('/forcedelete/{id?}', '\App\Http\Controllers\News\Admin\NewsCategoryController@forcedelete')->name('newscategory.forcedelete');
+        });
+        Route::resource('newscategory','\App\Http\Controllers\News\Admin\NewsCategoryController');
     });
 });
