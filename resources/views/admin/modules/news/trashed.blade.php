@@ -19,7 +19,7 @@
     
     @can('newscategory-list')
     <div class="card mb-3">
-        <div class="card-header">News Category Menu</div>
+        <div class="card-header">Category Menu</div>
         <div class="card-body">
             <ul class="admin-menu">
                 <li><a href="{{ route('admin.newscategory.index') }}"><span class='raq'>&raquo;</span><span>View lists</span></a></li>
@@ -62,7 +62,6 @@
                             <th class="text-nowrap">Category Name</th>
                             <th>Title</th>
                             <th class="text-nowrap">Short Description</th>
-                            <th>Image</th>
                             <th class="text-nowrap">Date Updated</th>
                             <th width="5%">Action</th>
                         </tr>
@@ -75,7 +74,6 @@
                             <th>Category Name</th>
                             <th>Title</th>
                             <th>Short Description</th>
-                            <th>Image</th>
                             <th>Date Updated</th>
                             <th></th>
                         </tr>
@@ -90,68 +88,11 @@
 @endsection
 
 @section('styles')
-<link href="{{ asset('DataTables-Bootstrap/datatables.min.css') }}" rel="stylesheet">
-
-<style>
-    .right-panel {
-        float: right;
-        width: 220px;
-        margin-left: 15px
-    }
-
-    .right-panel .card {
-        border: 1px solid #665847;
-        border-radius: 0
-    }
-
-    .right-panel .card .card-header {
-        background-color: #665847;
-        border-radius: 0;
-        color: #fff;
-        padding: .5rem 1.25rem
-    }
-
-    .right-panel .card .card-body {
-        padding: 0
-    }
-
-    .right-panel .card .card-body .admin-menu {
-        padding: 0;
-        margin: 0
-    }
-
-    .right-panel .card .card-body .admin-menu li {
-        display: block;
-        margin: 0;
-        padding: 0;
-        border-bottom: 1px solid #665847
-    }
-
-    .right-panel .card .card-body .admin-menu li a {
-        display: block;
-        margin: .25rem 0;
-        padding: 0 1.25rem;
-        color: #000
-    }
-
-    .right-panel .card .card-body .admin-menu li a.active .raq,.right-panel .card .card-body .admin-menu li a:hover .raq {
-        display: block
-    }
-
-    .right-panel .card .card-body .admin-menu li a .raq {
-        float: left;
-        display: none;
-        font-size: 16px
-    }
-
-    .right-panel .card .card-body .admin-menu li:last-child {
-        border-bottom: 0
-    }
-</style>
+<link href="{{ asset('plugins/DataTables-Bootstrap/datatables.min.css') }}" rel="stylesheet">
 @endsection
 
 @section('javascript')
-<script src="{{ asset('DataTables-Bootstrap/datatables.min.js') }}"></script>
+<script src="{{ asset('plugins/DataTables-Bootstrap/datatables.min.js') }}"></script>
 <script>
     $(document).ready(function () {
         
@@ -169,13 +110,6 @@
                 {"data": "name"},
                 {"data": "title"},
                 {"data": "short_description"},
-                {
-                    bSearchable: false,
-                    bSortable: false,
-                    render: function (data, type, full) {
-                        return '<img src="/storage/news/icon/'+full.image+'" alt="'+full.image_alt+'"  title="'+full.image_alt+'"/>'
-                    }
-                },
                 {"data": "updated_at"},
                 {
                     width: "20%",

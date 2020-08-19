@@ -32,7 +32,7 @@ class PatchQuotationRequest extends FormRequest
         return [
             'id' => 'required',
             'title' => 'required|max:100',
-            'description' => 'required|max:800',
+            'description' => 'required|max:1000',
         ];
     }
 }

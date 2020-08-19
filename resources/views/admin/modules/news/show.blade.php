@@ -22,7 +22,7 @@
     
     @can('newscategory-list')
     <div class="card mb-3">
-        <div class="card-header">News Category Menu</div>
+        <div class="card-header">Category Menu</div>
         <div class="card-body">
             <ul class="admin-menu">
                 <li><a href="{{ route('admin.newscategory.index') }}"><span class='raq'>&raquo;</span><span>View lists</span></a></li>
@@ -75,15 +75,6 @@
                         <dl class="row">
                             <dt class="col-sm-2">Content:</dt>
                             <dd class="col-sm-9">{!! $news->description !!}</dd>
-                        </dl>
-                        <dl class="row">
-                            <dt class="col-sm-2">Image:</dt>
-                            <dd class="col-sm-9"><img src='{{ asset('storage/news/icon/' . $news->image) }}' alt="{{ $news->image_alt }}" title="{{ $news->image_alt }}" /></dd>
-                        </dl>
-                        
-                        <dl class="row">
-                            <dt class="col-sm-2">Alt:</dt>
-                            <dd class="col-sm-9">{{ $news->image_alt }}</dd>
                         </dl>
                         
                         <dl class="row">

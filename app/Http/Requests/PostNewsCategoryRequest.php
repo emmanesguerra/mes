@@ -31,7 +31,7 @@ class PostNewsCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|max:50',
-            'short_description' => 'max:191'
+            'short_description' => 'max:1000'
         ];
     }
 }

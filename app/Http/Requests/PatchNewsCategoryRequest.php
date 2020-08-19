@@ -32,7 +32,7 @@ class PatchNewsCategoryRequest extends FormRequest
         return [
             'id' => 'required',
             'name' => 'required|max:50',
-            'short_description' => 'max:191'
+            'short_description' => 'max:1000'
         ];
     }
 }

@@ -31,7 +31,7 @@ class PostQuotationRequest extends FormRequest
     {
         return [
             'title' => 'required|max:100',
-            'description' => 'required|max:800',
+            'description' => 'required|max:1000',
         ];
     }
 }

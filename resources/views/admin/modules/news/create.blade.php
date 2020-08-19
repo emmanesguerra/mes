@@ -33,7 +33,7 @@
                 
                 {!! Form::open(array('route' => 'admin.news.store','method'=>'POST', 'files'=>true)) !!}
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-10">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="col-sm-12">
                             <div class="form-row">
                                 <div  class="form-group  col-sm-12">
@@ -60,19 +60,6 @@
                                     <textarea class="form-control ae-input-field @error('short_description') is-invalid @enderror " name="short_description" id="short_description" rows="5"/>{{ old('short_description') }}</textarea>
                                     @error('short_description') <div class="invalid-feedback">{{ $message }}</div> @enderror 
                                  </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group  col-sm-12">
-                                    <label>Image * </label>
-                                    {{ Form::file('image') }}
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div  class="form-group  col-sm-6">
-                                    <label class="@error('image_alt') text-danger @enderror" for="image_alt">Img "alt" Attribute <small>(Image title or something descriptive)</small> *</label>
-                                    <input maxlength="100" type="text" class="form-control ae-input-field @error('image_alt') is-invalid @enderror " name="image_alt" value="{{ old('image_alt') }}" id="image_alt"/>
-                                    @error('image_alt') <div class="invalid-feedback">{{ $message }}</div> @enderror 
-                                </div>
                             </div>
                             <div class="form-row">
                                 <tinymce-form  :value="{{ (Session::getOldInput('description')) ? json_encode(Session::getOldInput('description')): json_encode(null) }}"
@@ -111,5 +98,5 @@
 @endsection
 
 @section('javascripttop')
-<script src="{{ asset('tinymce_5.4.1/js/tinymce/tinymce.min.js') }}"></script>
+<script src="{{ asset('plugins/tinymce_5.4.1/js/tinymce/tinymce.min.js') }}"></script>
 @endsection

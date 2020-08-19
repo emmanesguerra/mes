@@ -23,7 +23,7 @@
     
     @can('newscategory-list')
     <div class="card mb-3">
-        <div class="card-header">News Category Menu</div>
+        <div class="card-header">Category Menu</div>
         <div class="card-body">
             <ul class="admin-menu">
                 <li><a href="{{ route('admin.newscategory.index') }}"><span class='raq'>&raquo;</span><span>View lists</span></a></li>

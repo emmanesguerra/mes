@@ -16,6 +16,9 @@ use App\Observers\QuotationObserver;
 use App\Model\NewsCategory;
 use App\Observers\NewsCategoryObserver;
 
+use App\Model\News;
+use App\Observers\NewsObserver;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -44,5 +47,6 @@ class AppServiceProvider extends ServiceProvider
         Slider::observe(SliderObserver::class);
         Quotation::observe(QuotationObserver::class);
         NewsCategory::observe(NewsCategoryObserver::class);
+        News::observe(NewsObserver::class);
     }
 }

@@ -3,8 +3,16 @@
 namespace App\Http\Controllers\News\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Model\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Core\Library\DataTables;
+use Core\Library\FileManager;
+use Core\Model\Page;
+use App\Model\News;
+use App\Model\NewsCategory;
+use App\Http\Requests\PostNewsRequest;
+use App\Http\Requests\PatchNewsRequest;
 
 class NewsController extends Controller
 {
@@ -33,8 +41,7 @@ class NewsController extends Controller
             1 => ['news_categories.name'],
             2 => ['news.title'],
             3 => ['news.short_description'],
-            4 => ['news.image'],
-            5 => ['news.updated_at'],
+            4 => ['news.updated_at'],
         ];
         
         $filteredmodel = DB::table('news')
@@ -48,8 +55,6 @@ class NewsController extends Controller
                     news_categories.name, 
                     news.title, 
                     news.short_description,
-                    news.image, 
-                    news.image_alt, 
                     news.updated_at")
             );
         
@@ -70,7 +75,16 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        $disk = 'adminuploads';
+        $allFiles = Storage::disk($disk)->files();
+        $images = FileManager::getImageRelativePath($allFiles, $disk);
+        
+        $page = Page::where('name', 'News')->first();
+        $styles = FileManager::GetCSSRelativePath($page->css);
+        
+        $categories = NewsCategory::get(['id', 'name as label']);
+        
+        return view('admin.modules.news.create')->with(compact('styles', 'images', 'categories'));
     }
 
     /**
@@ -79,9 +93,18 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostNewsRequest $request)
     {
-        //
+        try
+        {
+            News::create($request->only('category_id', 'title', 'short_description', 'description'));
+            
+            return redirect()->route('admin.news.index')->with('status-success', 'News created successfully');
+            
+        } catch (\Exception $ex) {
+            return redirect()->back()->with('status-failed', $ex->getMessage())
+                        ->withInput($request->input());
+        }
     }
 
     /**
@@ -92,7 +115,7 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+        return view('admin.modules.news.show')->with(compact('news'));
     }
 
     /**
@@ -103,7 +126,16 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        //
+        $disk = 'adminuploads';
+        $allFiles = Storage::disk($disk)->files();
+        $images = FileManager::getImageRelativePath($allFiles, $disk);
+        
+        $page = Page::where('name', 'News')->first();
+        $styles = FileManager::GetCSSRelativePath($page->css);
+        
+        $categories = NewsCategory::get(['id', 'name as label']);
+        
+        return view('admin.modules.news.edit')->with(compact('news', 'styles', 'images', 'categories'));
     }
 
     /**
@@ -113,9 +145,18 @@ class NewsController extends Controller
      * @param  \App\Model\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(PatchNewsRequest $request, News $news)
     {
-        //
+        try
+        {
+            $news->update($request->only('title', 'description', 'link', 'image_alt'));
+            
+            return redirect()->route('admin.news.index')->with('status-success','News ID#'.$news->id.' updated successfully');
+            
+        } catch (\Exception $ex) {
+            return redirect()->back()->with('status-failed', $ex->getMessage())
+                        ->withInput($request->input());
+        }
     }
 
     /**
@@ -126,6 +167,64 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        //
+        try
+        {
+            $news->delete();
+            return redirect()->route('admin.news.index')
+                            ->with('status-success','News ID#'.$news->id.' deleted successfully');
+        } catch (Exception $ex) {
+            return redirect()->route('admin.news.index')
+                            ->with('status-failed', $ex->getMessage());
+        }
+    }
+    
+    /**
+     * Display a listing of the trashed resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function trashed()
+    {
+        return view('admin.modules.news.trashed');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function restore($id)
+    {
+        $news = News::onlyTrashed()->find($id);
+        
+        return view('admin.modules.news.show')->with(compact('news'));
+    }
+    
+    public function processrestore(Request $request, $id)
+    {
+        try
+        {
+            News::onlyTrashed()->find($id)->restore();
+            
+            return redirect()->route('admin.news.index')->with('status-success', 'News ID#'.$id.' restored successfully');
+            
+        } catch (\Exception $ex) {
+            return redirect()->back()->with('status-failed', $ex->getMessage());
+        }
+    }
+    
+    public function forcedelete($id)
+    {
+        try
+        {
+            $news = News::onlyTrashed()->find($id)->forceDelete();
+                    
+            return redirect()->route('admin.news.index')
+                            ->with('status-success','News ID#'.$id.' is permanently deleted in the system');
+        } catch (Exception $ex) {
+            return redirect()->route('admin.news.index')
+                            ->with('status-failed', $ex->getMessage());
+        }
     }
 }

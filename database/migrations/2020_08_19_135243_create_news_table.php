@@ -17,7 +17,7 @@ class CreateNewsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->string('title');
-            $table->string('short_description', 255);
+            $table->string('short_description', 1000);
             $table->text('description');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
@@ -28,7 +28,7 @@ class CreateNewsTable extends Migration
         Schema::create('news_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
-            $table->string('short_description')->nullable();
+            $table->string('short_description', 1000)->nullable();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();

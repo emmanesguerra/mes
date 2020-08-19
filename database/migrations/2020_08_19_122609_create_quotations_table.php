@@ -16,7 +16,7 @@ class CreateQuotationsTable extends Migration
         Schema::create('quotations', function (Blueprint $table) {
             $table->id();
             $table->string('title', 100)->nullable();
-            $table->string('description', 800)->nullable();
+            $table->string('description', 1000)->nullable();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();

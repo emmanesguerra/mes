@@ -22,7 +22,7 @@
     
     @can('newscategory-list')
     <div class="card mb-3">
-        <div class="card-header">News Category Menu</div>
+        <div class="card-header">Category Menu</div>
         <div class="card-body">
             <ul class="admin-menu">
                 <li><a href="{{ route('admin.newscategory.index') }}"><span class='raq'>&raquo;</span><span>View lists</span></a></li>
@@ -61,7 +61,6 @@
                             <th class="text-nowrap">Category Name</th>
                             <th>Title</th>
                             <th class="text-nowrap">Short Description</th>
-                            <th>Image</th>
                             <th class="text-nowrap">Date Updated</th>
                             <th width="5%">Action</th>
                         </tr>
@@ -74,7 +73,6 @@
                             <th>Category Name</th>
                             <th>Title</th>
                             <th>Short Description</th>
-                            <th>Image</th>
                             <th>Date Updated</th>
                             <th></th>
                         </tr>
@@ -106,13 +104,6 @@
                 {"data": "name"},
                 {"data": "title"},
                 {"data": "short_description"},
-                {
-                    bSearchable: false,
-                    bSortable: false,
-                    render: function (data, type, full) {
-                        return '<img src="/storage/news/icon/'+full.image+'" alt="'+full.image_alt+'"  title="'+full.image_alt+'"/>'
-                    }
-                },
                 {"data": "updated_at"},
                 {
                     width: "20%",

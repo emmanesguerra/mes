@@ -33,7 +33,7 @@ class PatchSliderRequest extends FormRequest
             'id' => 'required',
             'image' => '',
             'title' => 'max:100|required_with:link',
-            'description' => 'max:300',
+            'description' => 'max:1000',
             'link' => 'max:191',
             'text_pos1' => 'max:3',
             'text_pos2' => 'max:3',

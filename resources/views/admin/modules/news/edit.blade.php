@@ -63,23 +63,6 @@
                                  </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group  col-sm-12">
-                                    <label>Image * </label>
-                                    {{ Form::file('image') }}
-                                </div>
-                                <div class="form-group  col-sm-12">
-                                    <label>Current Image </label>
-                                    <img src='{{ asset('/storage/news/icon/'.$news->image) }}' alt='{{ $news->title }}'/>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div  class="form-group  col-sm-6">
-                                    <label class="@error('image_alt') text-danger @enderror" for="image_alt">Img "alt" Attribute <small>(Image title or something descriptive)</small> *</label>
-                                    <input maxlength="100" type="text" class="form-control ae-input-field @error('image_alt') is-invalid @enderror " name="image_alt" value="{{ old('image_alt', $news->image_alt) }}" id="image_alt"/>
-                                    @error('image_alt') <div class="invalid-feedback">{{ $message }}</div> @enderror 
-                                </div>
-                            </div>
-                            <div class="form-row">
                                 <tinymce-form  :value="{{ (Session::getOldInput('description')) ? json_encode(Session::getOldInput('description')): json_encode($news->description) }}"
                                                :textareaname="{{ json_encode('description') }}"
                                                :label="{{ json_encode('Content') }}"
@@ -116,5 +99,5 @@
 @endsection
 
 @section('javascripttop')
-<script src="{{ asset('tinymce_5.4.1/js/tinymce/tinymce.min.js') }}"></script>
+<script src="{{ asset('plugins/tinymce_5.4.1/js/tinymce/tinymce.min.js') }}"></script>
 @endsection
