@@ -122,7 +122,9 @@ class SliderController extends Controller
             if($request->hasFile('image')) {
                 $this->RemoveImageFile($disk, $newname); 
             }
-            return redirect()->back()->with('status-failed', $ex->getMessage());
+            return redirect()->back()
+                    ->with('status-failed', $ex->getMessage())
+                    ->withInput($request->input());
         }
     }
 
@@ -190,7 +192,9 @@ class SliderController extends Controller
             
         } catch (\Exception $ex) {
             DB::rollback();
-            return redirect()->back()->with('status-failed', $ex->getMessage());
+            return redirect()->back()
+                    ->with('status-failed', $ex->getMessage())
+                    ->withInput($request->input());
         }
     }
 

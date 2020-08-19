@@ -85,7 +85,9 @@ class QuotationController extends Controller
             
             return redirect()->route('admin.quotes.index')->with('status-success', 'Quote created successfully');
         } catch (\Exception $ex) {
-            return redirect()->back()->with('status-failed', $ex->getMessage());
+            return redirect()->back()
+                    ->with('status-failed', $ex->getMessage())
+                    ->withInput($request->input());
         }
     }
 
@@ -131,7 +133,9 @@ class QuotationController extends Controller
             
             return redirect()->route('admin.quotes.index')->with('status-success', 'Quote updated successfully');
         } catch (\Exception $ex) {
-            return redirect()->back()->with('status-failed', $ex->getMessage());
+            return redirect()->back()
+                    ->with('status-failed', $ex->getMessage())
+                    ->withInput($request->input());
         }
     }
 
