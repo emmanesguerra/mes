@@ -106,30 +106,7 @@
             <div class='newscontainer col-md-8'>
                 <h2>News and Updates</h2>
                 <div class='newslistcontainer'>
-                    <section>
-                        <h3><a href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h3>
-                        <span class='date'>Jun 30 2020</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit fermentum sem sed scelerisque. In posuere tellus quam, et tempus augue egestas vitae. Nam commodo erat purus</p>
-                        <span class='readmore'><a href='#'>Read More</a></span>
-                    </section>
-                    <section>
-                        <h3><a href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h3>
-                        <span class='date'>Jun 30 2020</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit fermentum sem sed scelerisque. In posuere tellus quam, et tempus augue egestas vitae. Nam commodo erat purus</p>
-                        <span class='readmore'><a href='#'>Read More</a></span>
-                    </section>
-                    <section>
-                        <h3><a href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h3>
-                        <span class='date'>Jun 30 2020</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit fermentum sem sed scelerisque. In posuere tellus quam, et tempus augue egestas vitae. Nam commodo erat purus</p>
-                        <span class='readmore'><a href='#'>Read More</a></span>
-                    </section>
-                    <section>
-                        <h3><a href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h3>
-                        <span class='date'>Jun 30 2020</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit fermentum sem sed scelerisque. In posuere tellus quam, et tempus augue egestas vitae. Nam commodo erat purus</p>
-                        <span class='readmore'><a href='#'>Read More</a></span>
-                    </section>
+                    {!! $NewsLists !!}
                 </div>
             </div>
             <div class='subscribe col-md-4'>
