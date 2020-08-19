@@ -101,6 +101,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'pagebanner' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/pagebanner'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*
