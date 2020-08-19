@@ -6,7 +6,7 @@
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
-                Edit Slider
+                Edit Quotation
                 @can('quotation-list')
                 <a href="{{ route('admin.quotes.index') }}" class="float-right">Back</a>
                 @endcan

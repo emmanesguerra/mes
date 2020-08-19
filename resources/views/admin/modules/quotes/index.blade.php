@@ -36,7 +36,7 @@
                 </div>
                 @endif
             
-                <table id="sliderlists" class="datatable table table-striped table-bordered small">
+                <table id="lists" class="datatable table table-striped table-bordered small">
                     <thead>
                         <tr>
                             <th >ID</th>
@@ -74,7 +74,7 @@
 <script src="{{ asset('plugins/DataTables-Bootstrap/datatables.min.js') }}"></script>
 <script>
     $(document).ready(function () {
-        $('#sliderlists').DataTable({
+        $('#lists').DataTable({
             "ajax": {
                 "url": "{{ route('admin.quotes.data') }}",
                 "data": {

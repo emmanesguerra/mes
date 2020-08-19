@@ -36,7 +36,7 @@
                 </div>
                 @endif
             
-                <table id="sliderlists" class="datatable table table-striped table-bordered small">
+                <table id="lists" class="datatable table table-striped table-bordered small">
                     <thead>
                         <tr>
                             <th >ID</th>
@@ -75,7 +75,7 @@
 <script>
     $(document).ready(function () {
         
-        $('#sliderlists').DataTable({
+        $('#lists').DataTable({
             responsive: true,
             processing: true,
             "ajax": {

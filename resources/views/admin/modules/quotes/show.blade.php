@@ -4,7 +4,7 @@
 @section('right-panel')
 <section class="right-panel">
     <div class="card mb-3">
-        <div class="card-header">Slider Menu</div>
+        <div class="card-header">Quotation Menu</div>
         <div class="card-body">
             <ul class="admin-menu">
                 @can('quotation-list')
