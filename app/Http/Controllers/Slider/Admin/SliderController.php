@@ -90,22 +90,21 @@ class SliderController extends Controller
      */
     public function store(PostSliderRequest $request)
     {
-        $disk = 'sliders';
-        $newname = "";
-        if($request->hasFile('image')) {
-            $file = $request->file('image');
-            $newname = time() . '_' . strtolower($file->getClientOriginalName());
-            Storage::disk($disk)->put($newname, file_get_contents($file));
-
-            if((extension_loaded('imagick')) && (in_array($file->extension(), ['jpg', 'jpeg', 'png', 'gif']))) {
-                FileManager::ResizeAndSave($file, self::ICON_IMG_WIDTH, $newname, $file->extension(), $file->getSize(), $disk, 'icon/');
-            }
-        } else {
-            throw new \Exception ('Image is required');
-        }
-        
         try
         {
+            $disk = 'sliders';
+            $newname = "";
+            if($request->hasFile('image')) {
+                $file = $request->file('image');
+                $newname = time() . '_' . strtolower($file->getClientOriginalName());
+                Storage::disk($disk)->put($newname, file_get_contents($file));
+
+                if((extension_loaded('imagick')) && (in_array($file->extension(), ['jpg', 'jpeg', 'png', 'gif']))) {
+                    FileManager::ResizeAndSave($file, self::ICON_IMG_WIDTH, $newname, $file->extension(), $file->getSize(), $disk, 'icon/');
+                }
+            } else {
+                throw new \Exception ('Image is required');
+            }
             Slider::create([
                 'title' => $request->title,
                 'description' => $request->description,
