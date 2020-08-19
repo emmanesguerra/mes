@@ -11,10 +11,10 @@
             <ul class="admin-menu">
                 <li><a href="{{ route('admin.news.index') }}"><span class='raq'>&raquo;</span><span>View lists</span></a></li>
                 @can('news-create')
-                <li><a href="{{ route('admin.newscategory.create') }}"><span class='raq'>&raquo;</span><span>Create New Record</span></a></li>
+                <li><a href="{{ route('admin.news.create') }}"><span class='raq'>&raquo;</span><span>Create New Record</span></a></li>
                 @endcan
                 @can('news-trash')
-                <li><a href="{{ route('admin.newscategory.trashed') }}"><span class='raq'>&raquo;</span><span>View deleted list</span></a></li>
+                <li><a href="{{ route('admin.news.trashed') }}"><span class='raq'>&raquo;</span><span>View deleted list</span></a></li>
                 @endcan
             </ul>
         </div>

@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Model\News;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class NewsObserver
 {
@@ -16,6 +17,7 @@ class NewsObserver
     public function creating(News $args)
     {
         $args->created_by = Auth::id();
+        $args->slug = Str::slug($args->title);
     }
 
     /**
@@ -27,6 +29,7 @@ class NewsObserver
     public function updating(News $args)
     {
         $args->updated_by = Auth::id();
+        $args->slug = Str::slug($args->title);
     }
     
     /**
