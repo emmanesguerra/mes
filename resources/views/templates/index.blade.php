@@ -73,12 +73,10 @@
                 </div>
                 <div class='row'>
                     <div class='col-md-6 p-3'>
-                        <img src='/images/s1.jpg' width="100%">
+                        {!! $SloganImage !!}
                     </div>
                     <div class='col-md-6 p-3'>
-                        <h1>Educating students with passion since 1951</h1>
-                        <br />
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit fermentum sem sed scelerisque. In posuere tellus quam, et tempus augue egestas vitae. Nam commodo erat purus, euismod maximus diam ullamcorper quis. Morbi sapien metus, porta vitae dui nec, fermentum tincidunt turpis. Fusce ultrices lorem ac nisi accumsan, at dignissim erat auctor.</p>
+                        {!! $SloganMsg !!}
                     </div>
                 </div>
             </div>
