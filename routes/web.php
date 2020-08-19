@@ -23,5 +23,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::delete('/forcedelete/{id?}', '\App\Http\Controllers\Slider\Admin\SliderController@forcedelete')->name('sliders.forcedelete');
         });
         Route::resource('sliders','\App\Http\Controllers\Slider\Admin\SliderController');
+        
+        Route::prefix('quotes')->group(function () {
+            Route::get('/data', '\App\Http\Controllers\Quotation\Admin\QuotationController@data')->name('quotes.data');
+            Route::get('/trashed', '\App\Http\Controllers\Quotation\Admin\QuotationController@trashed')->name('quotes.trashed');
+            Route::get('/restore/{id?}', '\App\Http\Controllers\Quotation\Admin\QuotationController@restore')->name('quotes.restore');
+            Route::post('/restore/{id}', '\App\Http\Controllers\Quotation\Admin\QuotationController@processrestore')->name('quotes.processrestore');
+            Route::delete('/forcedelete/{id?}', '\App\Http\Controllers\Quotation\Admin\QuotationController@forcedelete')->name('quotes.forcedelete');
+        });
+        Route::resource('quotes','\App\Http\Controllers\Quotation\Admin\QuotationController');
     });
 });

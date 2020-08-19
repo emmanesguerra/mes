@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class PatchSliderRequest extends FormRequest
+class PatchQuotationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,7 +16,7 @@ class PatchSliderRequest extends FormRequest
     {
         try
         {
-            return Auth::user()->hasPermissionTo('slider-edit', true);
+            return Auth::user()->hasPermissionTo('quotation-edit', true);
         } catch (\Exception $ex) {
             return abort(403, "Action Denied. This account doesn't have authorization to continue this process.");
         }
@@ -31,12 +31,8 @@ class PatchSliderRequest extends FormRequest
     {
         return [
             'id' => 'required',
-            'image' => '',
-            'title' => 'max:100|required_with:link',
-            'description' => 'max:300',
-            'link' => 'max:191',
-            'text_pos1' => 'max:3',
-            'text_pos2' => 'max:3',
+            'title' => 'required|max:100',
+            'description' => 'required|max:800',
         ];
     }
 }

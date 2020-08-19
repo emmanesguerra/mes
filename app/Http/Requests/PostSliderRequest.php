@@ -32,7 +32,7 @@ class PostSliderRequest extends FormRequest
         return [
             'image' => 'required',
             'title' => 'max:100|required_with:link',
-            'description' => 'max:191',
+            'description' => 'max:300',
             'link' => 'max:191',
             'text_pos1' => 'max:3',
             'text_pos2' => 'max:3',

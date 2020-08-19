@@ -95,21 +95,7 @@
                 </div>
             </div>
             <div class='quotes col-md-8 p-5'>
-                <section>
-                    <h2>"Every Child has a Different Learning Style and Pace"</h2>
-                    <br />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit fermentum sem sed scelerisque. In posuere tellus quam, et tempus augue egestas vitae. Nam commodo erat purus, euismod maximus diam ullamcorper quis. Morbi sapien metus, porta vitae dui nec, fermentum tincidunt turpis. Fusce ultrices lorem ac nisi accumsan, at dignissim erat auctor.</p>
-                </section>
-                <section>
-                    <h2>No Kid is unsmart, Every KID's a genius at something!"</h2>
-                    <br />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit fermentum sem sed scelerisque. In posuere tellus quam, et tempus augue egestas vitae. Nam commodo erat purus, euismod maximus diam ullamcorper quis. Morbi sapien metus, porta vitae dui nec, fermentum tincidunt turpis. Fusce ultrices lorem ac nisi accumsan, at dignissim erat auctor.</p>
-                </section>
-                <section>
-                    <h2>"Teaching is a work of heart"</h2>
-                    <br />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit fermentum sem sed scelerisque. In posuere tellus quam, et tempus augue egestas vitae. Nam commodo erat purus, euismod maximus diam ullamcorper quis. Morbi sapien metus, porta vitae dui nec, fermentum tincidunt turpis. Fusce ultrices lorem ac nisi accumsan, at dignissim erat auctor.</p>
-                </section>
+                {!! $Quotes !!}
             </div>
         </div>
     </div>

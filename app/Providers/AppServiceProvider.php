@@ -10,6 +10,9 @@ use Core\Observers\BaseObserver;
 use App\Model\Slider;
 use App\Observers\SliderObserver;
 
+use App\Model\Quotation;
+use App\Observers\QuotationObserver;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -36,5 +39,6 @@ class AppServiceProvider extends ServiceProvider
         $baseobserver->init();
         
         Slider::observe(SliderObserver::class);
+        Quotation::observe(QuotationObserver::class);
     }
 }

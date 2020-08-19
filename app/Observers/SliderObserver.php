@@ -15,7 +15,6 @@ class SliderObserver
      */
     public function creating(Slider $slider)
     {
-        \Illuminate\Support\Facades\Log::info('id:' . Auth::id());
         $slider->created_by = Auth::id();
     }
 
