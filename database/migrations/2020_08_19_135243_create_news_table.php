@@ -16,8 +16,8 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
-            $table->string('slug');
-            $table->string('title');
+            $table->string('slug')->unique()->index();
+            $table->string('title')->unique();
             $table->string('short_description', 1000);
             $table->text('description');
             $table->unsignedBigInteger('created_by');
@@ -28,8 +28,8 @@ class CreateNewsTable extends Migration
         
         Schema::create('news_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
-            $table->string('name', 50);
+            $table->string('slug', 50)->unique()->index();
+            $table->string('name', 50)->unique();
             $table->string('short_description', 1000)->nullable();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
