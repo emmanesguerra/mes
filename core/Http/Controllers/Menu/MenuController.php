@@ -286,13 +286,23 @@ class MenuController extends Controller
     private function generateNaviForChildren($submenu, $settings, $isChildren = true) 
     {
         $html = ($isChildren) ? $settings->subblck_start: $settings->blck_start;
-                
+        
+        $explodedPath = explode('/', request()->path());     
+        
         foreach($submenu as $menu) {
             if(count($menu->submenu) > 0) {
                 $html .= ($isChildren) ? $settings->sublist_chld: $settings->list_chld;
                 $anchor = ($isChildren) ? $settings->subanch_chld: $settings->anch_chld;
             } else {
-                $html .= ($isChildren) ? $settings->sublist_dflt: $settings->list_dflt;
+                if($isChildren) {
+                    $html .= $settings->sublist_dflt;
+                } else {
+                    if(in_array(trim($menu->page->url, '/'), $explodedPath)) {
+                        $html .= $settings->list_dflt_active;
+                    } else {
+                        $html .= $settings->list_dflt;
+                    }
+                }
                 $anchor = ($isChildren) ? $settings->subanch_dflt: $settings->anch_dflt;
             }
             
