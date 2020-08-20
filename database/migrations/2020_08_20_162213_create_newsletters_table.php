@@ -27,6 +27,8 @@ class CreateNewslettersTable extends Migration
             $table->id();
             $table->string('email');
             $table->timestamp('unsubscribed_date')->nullable();
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
     }

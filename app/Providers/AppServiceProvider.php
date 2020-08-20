@@ -25,6 +25,9 @@ use App\Observers\PageBannerObserver;
 use App\Model\Newsletters;
 use App\Observers\NewslettersObserver;
 
+use App\Model\Subscriber;
+use App\Observers\SubscriberObserver;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -56,5 +59,6 @@ class AppServiceProvider extends ServiceProvider
         News::observe(NewsObserver::class);
         PageBanner::observe(PageBannerObserver::class);
         Newsletters::observe(NewslettersObserver::class);
+        Subscriber::observe(SubscriberObserver::class);
     }
 }

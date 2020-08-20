@@ -68,6 +68,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::delete('/forcedelete/{id?}', '\App\Http\Controllers\Newsletters\Admin\NewslettersController@forcedelete')->name('newsletters.forcedelete');
         });
         Route::resource('newsletters','\App\Http\Controllers\Newsletters\Admin\NewslettersController');
+        
+        Route::prefix('newsletterssubs')->group(function () {
+            Route::get('/data', '\App\Http\Controllers\Newsletters\Admin\Subscribers@data')->name('newsletterssubs.data');
+            Route::get('/subs/{id}', '\App\Http\Controllers\Newsletters\Admin\Subscribers@subs')->name('newsletterssubs.subs');
+        });
+        Route::resource('newsletterssubs','\App\Http\Controllers\Newsletters\Admin\Subscribers');
     });
 });
 

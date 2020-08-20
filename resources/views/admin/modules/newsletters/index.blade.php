@@ -19,6 +19,22 @@
         </div>
     </div>
     @endcan
+    
+    @can('subscribers-list')
+    <div class="card mb-3">
+        <div class="card-header">Subscriber Menu</div>
+        <div class="card-body">
+            <ul class="admin-menu">
+                @can('subscribers-list')
+                <li><a href="{{ route('admin.newsletterssubs.index') }}"><span class='raq'>&raquo;</span><span>View list</span></a></li>
+                @endcan
+                @can('subscribers-create')
+                <li><a href="{{ route('admin.newsletterssubs.create') }}"><span class='raq'>&raquo;</span><span>Create New Record</span></a></li>
+                @endcan
+            </ul>
+        </div>
+    </div>
+    @endcan
 </section>
 @endsection
 
