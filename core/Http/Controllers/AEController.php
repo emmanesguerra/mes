@@ -16,9 +16,9 @@ class AEController extends Controller
      */
     public function index($params = null)
     {
-        $url = '/' . $params;
+        $url = array_filter(explode('/', \Request::getPathInfo()));
         
-        $page = Page::where('url', $url)->first();
+        $page = Page::where('url', '/'. reset($url))->first();
         
         if($page) {
             
@@ -30,7 +30,7 @@ class AEController extends Controller
                 } else {
                     $module = new $panel->class_namespace;
                     $fnname = $panel->method_name;
-                    $data[$panel->pivot->tags] = $module->$fnname($panel);
+                    $data[$panel->pivot->tags] = $module->$fnname($panel, $url);
                 }
             }
         
@@ -41,7 +41,7 @@ class AEController extends Controller
             $this->GenerateFooter($page);
             
         } else {
-            echo 'Page not found';
+            abort(404);
         }
     }
     
