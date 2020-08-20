@@ -41,9 +41,7 @@
                     <thead>
                         <tr>
                             <th >ID</th>
-                            <th class="text-nowrap">Category Name</th>
                             <th>Title</th>
-                            <th class="text-nowrap">Short Description</th>
                             <th class="text-nowrap">Date Updated</th>
                             <th width="5%">Action</th>
                         </tr>
@@ -53,9 +51,7 @@
                     <tfoot>
                         <tr>
                             <th >ID</th>
-                            <th>Category Name</th>
                             <th>Title</th>
-                            <th>Short Description</th>
                             <th>Date Updated</th>
                             <th></th>
                         </tr>
@@ -84,9 +80,7 @@
             },
             "columns": [
                 {"data": "id"},
-                {"data": "name"},
                 {"data": "title"},
-                {"data": "short_description"},
                 {"data": "updated_at"},
                 {
                     width: "20%",
