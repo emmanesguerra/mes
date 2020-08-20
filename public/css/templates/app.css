@@ -11422,7 +11422,9 @@ footer span a:hover {
   padding: 5px;
 }
 
+.quicklinks ul li.active ::before,
 .quicklinks ul li:hover ::before,
+.categories-panel ul li.active ::before,
 .categories-panel ul li:hover ::before {
   color: #333;
 }
