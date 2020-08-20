@@ -58,6 +58,11 @@
                                     @error('list_dflt') <div class="invalid-feedback">{{ $message }}</div> @enderror 
                                 </div>
                                 <div  class="form-group  col-sm-3">
+                                    <label class="@error('list_dflt_active') text-danger @enderror" for="list_dflt_active"><code>List</code> active block *</label>
+                                    <input maxlength="50" type="text" class="form-control ae-input-field @error('list_dflt_active') is-invalid @enderror " name="list_dflt_active" value="{{ old('list_dflt_active', $settings->list_dflt_active) }}" id="list_dflt_active" required/>
+                                    @error('list_dflt_active') <div class="invalid-feedback">{{ $message }}</div> @enderror 
+                                </div>
+                                <div  class="form-group  col-sm-3">
                                     <label class="@error('list_chld') text-danger @enderror" for="list_chld"><code>List</code> block w/ children *</label>
                                     <input maxlength="50" type="text" class="form-control ae-input-field @error('list_chld') is-invalid @enderror " name="list_chld" value="{{ old('list_chld', $settings->list_chld) }}" id="list_chld" required/>
                                     @error('list_chld') <div class="invalid-feedback">{{ $message }}</div> @enderror 

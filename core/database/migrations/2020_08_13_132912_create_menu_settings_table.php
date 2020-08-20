@@ -18,6 +18,7 @@ class CreateMenuSettingsTable extends Migration
             $table->string('blck_start', 150);
             $table->string('blck_end', 10);
             $table->string('list_dflt', 150);
+            $table->string('list_dflt_active', 150);
             $table->string('list_chld', 150);
             $table->string('list_end', 10);
             $table->string('anch_dflt', 150);
