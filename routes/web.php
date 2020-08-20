@@ -61,3 +61,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('pagebanner','\App\Http\Controllers\PageBanner\Admin\PageBannerController');
     });
 });
+
+Route::post('/send-inquiry', '\App\Http\Controllers\ContactUs\ContactUsController@send')->name('contactus.store');
