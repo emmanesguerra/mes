@@ -10977,6 +10977,10 @@ nav a.nav-link {
   text-decoration: none;
 }
 
+.topnav ul li.active a {
+  color: #fff;
+}
+
 .header {
   float: left;
   width: 100%;

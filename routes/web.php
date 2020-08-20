@@ -59,6 +59,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::delete('/forcedelete/{id?}', '\App\Http\Controllers\PageBanner\Admin\PageBannerController@forcedelete')->name('pagebanner.forcedelete');
         });
         Route::resource('pagebanner','\App\Http\Controllers\PageBanner\Admin\PageBannerController');
+        
+        Route::prefix('newsletters')->group(function () {
+            Route::get('/data', '\App\Http\Controllers\Newsletters\Admin\NewslettersController@data')->name('newsletters.data');
+            Route::get('/trashed', '\App\Http\Controllers\Newsletters\Admin\NewslettersController@trashed')->name('newsletters.trashed');
+            Route::get('/restore/{id?}', '\App\Http\Controllers\Newsletters\Admin\NewslettersController@restore')->name('newsletters.restore');
+            Route::post('/restore/{id}', '\App\Http\Controllers\Newsletters\Admin\NewslettersController@processrestore')->name('newsletters.processrestore');
+            Route::delete('/forcedelete/{id?}', '\App\Http\Controllers\Newsletters\Admin\NewslettersController@forcedelete')->name('newsletters.forcedelete');
+        });
+        Route::resource('newsletters','\App\Http\Controllers\Newsletters\Admin\NewslettersController');
     });
 });
 

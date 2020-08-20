@@ -22,6 +22,9 @@ use App\Observers\NewsObserver;
 use App\Model\PageBanner;
 use App\Observers\PageBannerObserver;
 
+use App\Model\Newsletters;
+use App\Observers\NewslettersObserver;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -52,5 +55,6 @@ class AppServiceProvider extends ServiceProvider
         NewsCategory::observe(NewsCategoryObserver::class);
         News::observe(NewsObserver::class);
         PageBanner::observe(PageBannerObserver::class);
+        Newsletters::observe(NewslettersObserver::class);
     }
 }
