@@ -6,11 +6,7 @@
                 <span><i class="fas fa-phone-alt mr-2"> </i>+63 909 1234 567</span>
             </div>
             <div class="col-sm-6 my-3">
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
+                {!! $TopLinks !!}
             </div>
         </div>
     </div>
