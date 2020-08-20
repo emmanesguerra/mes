@@ -40,4 +40,9 @@ class News extends Model implements Auditable
     {
         return $this->hasOne(NewsCategory::class, 'id', 'category_id');
     }
+    
+    public function user()
+    {
+        return $this->hasOne(\Core\Model\User::class, 'id', 'created_by');
+    }
 }
