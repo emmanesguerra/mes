@@ -71,6 +71,12 @@ nav {
                     text-decoration: none;
                 }
             }
+            
+            &.active {
+                a {
+                    color: #fff;
+                }
+            }
         }
     }
 }
