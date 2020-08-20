@@ -15,8 +15,12 @@ class PageBannerController extends Controller
         
         $page = Page::where('url', '/'. reset($url))->first();
         
-        $banner = $page->banner;
+        if($page->banner) {
+            $banner = $page->banner;
         
-        return view('modules.banner.index')->with(compact('banner'));
+            return view('modules.banner.index')->with(compact('banner'));
+        } else {
+            return "";
+        }
     }
 }
