@@ -31,7 +31,7 @@ class ContactUsController extends Controller
         Mail::to($reciever)
             ->cc($cc)
             ->bcc($bcc)
-            ->send(new SendInquiry($request));
+            ->send(new SendInquiry($request, $title));
         
         return Redirect::to(URL::previous() . "#contactusform")->with('status-success', 'Email sent');
     }

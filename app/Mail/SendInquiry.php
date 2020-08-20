@@ -11,6 +11,7 @@ class SendInquiry extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $title;
     protected $body;
     
     /**
@@ -18,9 +19,10 @@ class SendInquiry extends Mailable
      *
      * @return void
      */
-    public function __construct($body)
+    public function __construct($body, $title)
     {
         $this->body = $body;
+        $this->title = $title;
     }
 
     /**
@@ -33,6 +35,7 @@ class SendInquiry extends Mailable
         $body = $this->body;
         
         return $this->from($body->email)
+                    ->subject($this->title)
                     ->view('mail.contactus.index')->with(compact('body'));
     }
 }
