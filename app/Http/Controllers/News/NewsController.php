@@ -31,32 +31,48 @@ class NewsController extends Controller
             $level = 1;
         }
         
+        $menu = new \Core\Http\Controllers\Menu\MenuController();
+        $quicklink = \Core\Model\Content::where('name', 'Quicklinks Nav')->first();
+        $quicklinks = $menu->navi($quicklink);
+        
         $html = "";
         if($level === 3) {
-            $html = $this->DisplayNewsContent($news);
+            $html = $this->DisplayNewsContent($news, $quicklinks);
         } else if ($level === 2) {
-            $html = $this->DisplayCategoryContent($news);
+            $html = $this->DisplayCategoryContent($news, $quicklinks);
         } else {
-            $html = $this->DisplayAllNews($news);
+            $html = $this->DisplayAllNews($news, $quicklinks);
         }
         
         return $html;
     }
     
-    private function DisplayNewsContent(News $news) 
+    private function DisplayNewsContent(News $news, $quicklinks) 
     {
-        return view('modules.news.main')->with(compact('news'));
+        $categoryLists = $this->DisplayCategoryLists();
+        
+        return view('modules.news.main')->with(compact('news', 'categoryLists', 'quicklinks'));
     }
     
-    private function DisplayCategoryContent(NewsCategory $category) 
+    private function DisplayCategoryContent(NewsCategory $category, $quicklinks) 
     {
+        $categoryLists = $this->DisplayCategoryLists();
         $news = $category->news()->paginate(self::PAGINATE_CTR);
         
-        return view('modules.news.category')->with(compact('category', 'news'));
+        return view('modules.news.category')->with(compact('category', 'news', 'categoryLists', 'quicklinks'));
     }
     
-    private function DisplayAllNews($news) 
+    private function DisplayAllNews($news, $quicklinks) 
     {
-        return view('modules.news.paginate')->with(compact('news'));
+        $categoryLists = $this->DisplayCategoryLists();
+        
+        return view('modules.news.paginate')->with(compact('news', 'categoryLists', 'quicklinks'));
+    }
+    
+    private function DisplayCategoryLists()
+    {
+        $categories = NewsCategory::orderBy('name', 'asc')->get();
+        
+        return  view('modules.news.panels.category')->with(compact('categories'));
     }
 }
