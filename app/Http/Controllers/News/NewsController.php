@@ -13,7 +13,7 @@ class NewsController extends Controller
     
     public function panel() 
     {
-        $news = News::orderBy('created_at', 'desc')->get();
+        $news = News::orderBy('created_at', 'desc')->limit(5)->get();
         
         return view('modules.news.list')->with(compact('news'));
     }
