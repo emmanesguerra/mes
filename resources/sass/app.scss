@@ -118,6 +118,12 @@ nav {
                     color: #009641;
                 }
             }
+            
+            &.active {
+                .nav-link {
+                    color: #009641;
+                }
+            }   
         }
     }
 }
