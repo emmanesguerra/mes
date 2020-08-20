@@ -11,9 +11,9 @@ class PageBannerController extends Controller
 {
     public function panel() 
     {
-        $url = \Request::getRequestUri();
+        $url = array_filter(explode('/', \Request::getRequestUri()));
         
-        $page = Page::where('url', $url)->first();
+        $page = Page::where('url', '/'. reset($url))->first();
         
         $banner = $page->banner;
         
