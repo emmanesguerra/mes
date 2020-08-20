@@ -47,24 +47,12 @@
                 <div class='row my-3'>
                     <div class='aetinymce-content col-md-9'>
                         {!! $Main !!}
-
-
                     </div>
                     <div class='col-md-3'>
                         <div class="row">
                             <div class='quicklinks col-md-12'>
                                 <h3>Quicklinks</h3>
                                 {!! $Quicklinks !!}
-                                <ul>
-                                    <li><a href="#">Homepage</a></li>
-                                    <li><a href="#">Homepage</a></li>
-                                    <li><a href="#">Homepage</a></li>
-                                    <li><a href="#">Homepage</a></li>
-                                    <li><a href="#">Homepage</a></li>
-                                    <li><a href="#">Homepage</a></li>
-                                    <li><a href="#">Homepage</a></li>
-                                    <li><a href="#">Homepage</a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>
