@@ -14,13 +14,13 @@
 <div class="header">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 my-3">
+            <div class="col-sm-4 my-3">
                 <a class="logo" href="/">
                     <img src="/images/logo2.png" alt="Malaya Elementary School" title="Malaya Elementary School" />
                     <span><span>Malaya Elementary</span> School</span>
                 </a>
             </div>
-            <div class="col-sm-6 my-3">
+            <div class="col-sm-8 my-3">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

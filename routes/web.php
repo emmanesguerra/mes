@@ -92,3 +92,4 @@ Route::post('/send-inquiry', '\App\Http\Controllers\ContactUs\ContactUsControlle
 Route::post('/subscribe', '\App\Http\Controllers\Newsletters\NewslettersController@subscribe')->name('subscriber.store');
 Route::get('/subscriber/welcome', '\App\Http\Controllers\Newsletters\NewslettersController@welcome')->name('subscriber.welcome');
 Route::get('/subscriber/verify', '\App\Http\Controllers\Newsletters\NewslettersController@verify')->name('subscriber.verify');
+Route::get('/download-archive', '\App\Http\Controllers\Downloadables\DownloadablesController@download')->name('download.archive');
