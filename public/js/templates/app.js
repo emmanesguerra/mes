@@ -61945,6 +61945,10 @@ var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-
   }
 });
 
+if ($('#banner').length) {
+  $('.forthrow .box').css('margin-top', '-70px');
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

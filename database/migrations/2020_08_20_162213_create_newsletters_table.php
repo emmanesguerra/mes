@@ -25,10 +25,18 @@ class CreateNewslettersTable extends Migration
         
         Schema::create('newsletters_subs', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
+            $table->string('email')->index();
+            $table->timestamp('verified_date')->nullable();
             $table->timestamp('unsubscribed_date')->nullable();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
+            $table->timestamps();
+        });
+        
+        Schema::create('newsletters_verification_codes', function (Blueprint $table) {
+            $table->id();
+            $table->string('email');
+            $table->string('token')->index();
             $table->timestamps();
         });
     }
