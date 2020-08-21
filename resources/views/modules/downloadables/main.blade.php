@@ -1,5 +1,5 @@
 
-<h3>Folder Lists</h3>
+<h3>Directory Lists</h3>
 
 <ul>
 @foreach($downloadables as $downloadable)
