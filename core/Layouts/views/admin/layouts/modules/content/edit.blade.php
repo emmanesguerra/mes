@@ -54,7 +54,7 @@
                                            :bodyclass="{{ json_encode($content->container_class) }}"
                                            :imagelists="{{ json_encode($images) }}"
                                            :toolbar="{{ json_encode('undo redo | styleselect |  fontsizeselect forecolor bold italic underline | link unlink | alignleft aligncenter alignright | bullist numlist | image | code fullscreen') }}"
-                                           :plugins="{{ json_encode('code print preview autolink fullscreen image link media table insertdatetime advlist lists  wordcount imagetools textpattern help') }}"
+                                           :plugins="{{ json_encode('code print preview autolink fullscreen image link media table insertdatetime advlist lists  wordcount textpattern help') }}"
                                            :showmenu="{{ json_encode(true) }}">
                             </tinymce-form>
                             </div>

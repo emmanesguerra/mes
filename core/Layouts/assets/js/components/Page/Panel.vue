@@ -39,7 +39,7 @@
                 editorbodyclass: '',
                 editorimagelists: {},
                 editortoolbar: 'undo redo | styleselect |  fontsizeselect forecolor bold italic underline | link unlink | alignleft aligncenter alignright | bullist numlist | image | code fullscreen ',
-                editorplugins: 'code print preview autolink fullscreen image link media table insertdatetime advlist lists  wordcount imagetools textpattern help',
+                editorplugins: 'code print preview autolink fullscreen image link media table insertdatetime advlist lists  wordcount textpattern help',
                 editordisplaymenu: true
             }
         },
