@@ -108,6 +108,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'downloadables' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/downloadables'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*

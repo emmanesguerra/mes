@@ -28,6 +28,9 @@ use App\Observers\NewslettersObserver;
 use App\Model\Subscriber;
 use App\Observers\SubscriberObserver;
 
+use App\Model\Downloadables;
+use App\Observers\DownloadablesObserver;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -60,5 +63,6 @@ class AppServiceProvider extends ServiceProvider
         PageBanner::observe(PageBannerObserver::class);
         Newsletters::observe(NewslettersObserver::class);
         Subscriber::observe(SubscriberObserver::class);
+        Downloadables::observe(DownloadablesObserver::class);
     }
 }

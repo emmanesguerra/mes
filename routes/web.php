@@ -74,6 +74,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/subs/{id}', '\App\Http\Controllers\Newsletters\Admin\Subscribers@subs')->name('newsletterssubs.subs');
         });
         Route::resource('newsletterssubs','\App\Http\Controllers\Newsletters\Admin\Subscribers');
+        
+        Route::prefix('downloadables')->group(function () {
+            Route::get('/data', '\App\Http\Controllers\Downloadables\Admin\DownloadablesController@data')->name('downloadables.data');
+        });
+        Route::get('/downloadables', '\App\Http\Controllers\Downloadables\Admin\DownloadablesController@index')->name('downloadables.index');
+        Route::get('/downloadables/create', '\App\Http\Controllers\Downloadables\Admin\DownloadablesController@create')->name('downloadables.create');
+        Route::get('/downloadables/{id}', '\App\Http\Controllers\Downloadables\Admin\DownloadablesController@show')->name('downloadables.show');
+        Route::post('/downloadables', '\App\Http\Controllers\Downloadables\Admin\DownloadablesController@store')->name('downloadables.store');
+        Route::get('/downloadables/{id}/edit', '\App\Http\Controllers\Downloadables\Admin\DownloadablesController@edit')->name('downloadables.edit');
+        Route::post('/downloadables/{id}', '\App\Http\Controllers\Downloadables\Admin\DownloadablesController@update')->name('downloadables.update');
+        Route::delete('/downloadables/{id}', '\App\Http\Controllers\Downloadables\Admin\DownloadablesController@destroy')->name('downloadables.delete');
     });
 });
 
