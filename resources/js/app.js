@@ -48,3 +48,7 @@ const swiper = new Swiper('.swiper-container', {
         crossFade: true
     },
 });
+
+if($('#banner').length) {
+    $('.forthrow .box').css('margin-top', '-70px');
+}

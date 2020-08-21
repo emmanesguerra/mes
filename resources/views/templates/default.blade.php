@@ -33,9 +33,7 @@
         </div>
     </div>
 </div>
-<div class="banner">
-    {!! $Banner !!}
-</div>
+{!! $Banner !!}
 <div class="forthrow mb-5">
     <div class="container">
         <div class="row">

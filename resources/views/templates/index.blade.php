@@ -104,28 +104,7 @@
                 </div>
             </div>
             <div class='subscribe col-md-4'>
-                <div class='row'>
-                    <div class='col-md-12'>
-                        <i class='far fa-envelope'></i>
-
-                        <h3>Keep up with our latest news and events</h3>
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Your email address">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <button type="submit" class="btn mb-2">Subscribe</button>
-                                </div>
-                            </div>
-                        </form>
-
-                        <h4>OR</h4>
-
-                        <h3>Follow us on facebook</h3>
-                        <i class='fab fa-facebook-square'> </i>
-                    </div>
-                </div>
+                {!! $NewsletterSignup !!}
             </div>
         </div>
     </div>
