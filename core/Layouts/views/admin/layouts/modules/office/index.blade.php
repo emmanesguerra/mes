@@ -84,6 +84,17 @@
 @section('javascript')
 <script src="{{ asset('plugins/DataTables-Bootstrap/datatables.min.js') }}"></script>
 <script>
+    
+    
+    function striptags (str) {
+        if ((str===null) || (str==='') || typeof(str) === 'undefined')
+            return '';
+        else
+        str = str.toString();
+
+        return str.replace(/<[^>]*>/g, '');
+    }
+            
     $(document).ready(function () {
         
         $('#officelists').DataTable({
@@ -95,7 +106,11 @@
             },
             "columns": [
                 {"data": "id"},
-                {"data": "address"},
+                {
+                    render: function (data, type, full) { 
+                        return striptags(full.address)
+                    }
+                },
                 {"data": "telephone"},
                 {"data": "mobile"},
                 {"data": "email"},
