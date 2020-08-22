@@ -33,7 +33,7 @@
         </div>
     </div>
 </div>
-<div class="banner">
+<div id="banner" class="banner">
     <div class="banner-container">
         <div class="swiper-container">
             <!-- Additional required wrapper -->
