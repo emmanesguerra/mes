@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
+    public $displayAdmin = false;
     /**
      * Display a listing of the resource.
      *
