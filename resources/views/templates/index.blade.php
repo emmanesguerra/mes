@@ -55,7 +55,7 @@
                         <p>Helping community</p>
                     </div>
                     <div class='col-md-3 my-2'>
-                        <h3><i class='fas fa-graduation-cap'></i>  Graduation</h3> 
+                        <h3><i class='fas fa-graduation-cap'></i>  Graduates</h3> 
                         <p>Teaching leaders</p>
                     </div>
                     <div class='col-md-3 my-2'>
