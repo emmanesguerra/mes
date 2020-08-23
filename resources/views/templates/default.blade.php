@@ -1,11 +1,11 @@
 <div class="topnav">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 my-3">
-                <span class="mr-5"><i class="far fa-envelope-open mr-2"> </i>sample.email@gmail.com</span>
-                <span><i class="fas fa-phone-alt mr-2"> </i>+63 909 1234 567</span>
-            </div>
-            <div class="col-sm-6 my-3">
+            <div class="col-md-7 mt-3 mb-0 my-md-3">
+                <span class="d-block d-sm-inline mb-2 mr-5"><i class="far fa-envelope-open mr-2"> </i>sample.email@gmail.com</span>
+                <span class="d-block d-sm-inline"><i class="fas fa-phone-alt mr-2"> </i>+63 909 1234 567</span>
+                </div>
+            <div class="col-md-5 mb-3 mt-2 my-md-3">
                 {!! $TopLinks !!}
             </div>
         </div>
@@ -14,18 +14,18 @@
 <div class="header">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 my-3">
+            <div class="col-10 col-lg-5 my-3 pr-0">
                 <a class="logo" href="/">
-                    <img src="/images/logo2.png" alt="Malaya Elementary School" title="Malaya Elementary School" />
-                    <span><span>Malaya Elementary</span> School</span>
+                    <img class="float-left float-sm-none mr-1" src="/images/logo2.png" alt="Malaya Elementary School" title="Malaya Elementary School" />
+                    <span class="float-left float-sm-none my-1 my-sm-0"><span class="d-block d-sm-inline mb-2 mb-sm-0">Malaya Elementary</span> School</span>
                 </a>
             </div>
-            <div class="col-sm-8 my-3">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="col-2 col-lg-7 my-3 px-0 px-sm-3">
+                <nav class="p-0 py-2 navbar navbar-expand-lg navbar-light">
+                    <button  onclick="openNav()" class="navbar-toggler" type="button">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div id="mainnav"  class="collapse navbar-collapse">
+                    <div id="mainnav"  class="d-none d-lg-block collapse navbar-collapse">
                         {!! $HeaderNav !!}
                     </div>
                 </nav>
@@ -33,6 +33,19 @@
         </div>
     </div>
 </div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    {!! $SidebarNav !!}
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 {!! $Banner !!}
 <div class="forthrow mb-5">
     <div class="container">

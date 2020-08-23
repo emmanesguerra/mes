@@ -46,32 +46,33 @@ nav {
     float: left;
     width: 100%;
     background: #009641;
-    
+
     span {
         color: #79d87c;
-        
+
         i {
             color: inherit;
         }
     }
-    
-    ul  {
-        float: right;
-        margin-bottom: 0;
-        
+
+    ul  {        
         li {
             display: inline;
             padding: 10px;
-            
+
+            &:nth-child(1) {
+                padding-left: 0;
+            }
+
             a {
                 color: #79d87c;
-                
+
                 &:hover {
                     color: #fff;
                     text-decoration: none;
                 }
             }
-            
+
             &.active {
                 a {
                     color: #fff;
@@ -85,28 +86,61 @@ nav {
     float: left;
     width: 100%;
     background: #fff;
-    
+
     .logo {
         font: 1.6rem 'Aref Ruqaa', sans-serif;
         color: $primary;
         line-height: 20px;
-        
+
         img {
             height: 65px;
-            margin-right: 10px;
         }
-        
+
         span {
             color: $primary;
-            
+
             span {
                 color: #009641;
             }
         }
-        
+
         &:hover {
             text-decoration: none;
         }
+    }
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+    a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 23px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+
+        &:hover {
+            color: #f1f1f1;
+        }
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
     }
 }
 
@@ -119,12 +153,12 @@ nav {
                 font-weight: bolder;
                 padding-left: 1rem;
                 padding-right: 1rem;
-                
+
                 &:hover {
                     color: #009641;
                 }
             }
-            
+
             &.active {
                 .nav-link {
                     color: #009641;
@@ -137,17 +171,17 @@ nav {
     float: left;
     width: 100%;
     height: 75vh;
-    
+
     .banner-container {
         float: left;
         width: 100%;
         height: 100%;
-        
+
         .container {
             position: relative;
             width: 100%;
             height: 100%;
-            
+
             .pagetitle {
                 position: absolute;
                 bottom: 100px;
@@ -156,7 +190,7 @@ nav {
                 /* width: 100%; */
                 background: #0000005c;
                 box-shadow: #000 7px 0px 71px;
-                
+
                 h1 {
                     color: #fff;
                     text-shadow: #000 0 0 10px;
@@ -168,7 +202,7 @@ nav {
                     padding-left: 25px;
                     font-weight: 900;
                 }
-                
+
                 p {
                     color: #fff;
                     font-size: 18px;
@@ -177,18 +211,18 @@ nav {
                 }
             }
         }
-    
+
         .swiper-container {
             width: 100%;
             height: 100%;
 
             .swiper-slide {
-                
+
                 .container {
                     position: relative;
                     width: 100%;
                     height: 100%;
-                
+
                     .slider-msg {
                         position: absolute;
                         z-index: 10;
@@ -224,14 +258,14 @@ nav {
 .forthrow {
     float: left;
     width: 100%;
-    
+
     .box {
         background: #fff;
         border-radius: 2px 2px 0 0;
         box-shadow: #443939 0 0 10px;
         z-index: 10;
         padding: 30px 4rem;
-        
+
         i {
             float: left;
             font-size: 2rem;
@@ -249,7 +283,7 @@ nav {
     width: 100%;
     background: url('/images/24872.jpg') no-repeat center center;
     background-size: 100%;
-    
+
     .quotes {
         section {
             p {
@@ -264,19 +298,19 @@ nav {
     width: 100%;
     color: #e6e6e6;
     padding-bottom: 50px;
-    
+
     .newscontainer {
         background: #fff;
         padding-top: 2rem;
         padding-bottom: 2rem;
         padding-left: 3rem;
         padding-right: 3rem;
-    
+
         h2 {
             color: #000;
         }
     }
-    
+
     .subscribe {
         background: #1a2742;
         border-radius: 2px;
@@ -287,21 +321,21 @@ nav {
         padding-right: 3rem;
         color: #fff;
         text-align: center;
-        
+
         i {
             color: #fff;
             font-size: 85px;
         }
-        
+
         form {
             display: block;
             margin: 30px 0px 15px;
         }
-        
+
         h3, h4 {
             color: #fff;
         }
-        
+
         .form-control {
             font-size: 18px;
             padding: 20px;
@@ -324,10 +358,10 @@ nav {
     width: 100%;
     background: #232323;
     padding: 40px 0;
-    
+
     .contact {
         color: #ababab;
-        
+
         h3 {
             color: #fff;
             margin-bottom: 15px;
@@ -349,17 +383,17 @@ footer {
     width: 100%;
     background: #202020;
     padding: 30px 0;
-    
+
     span {
         color: #838383;
         display: block;
-        
+
         a {
-           color: #fff; 
-           
-           &:hover {
+            color: #fff; 
+
+            &:hover {
                 color: #fff; 
-           }
+            }
         }
     }
 }
@@ -387,7 +421,7 @@ footer {
 
 .aetinymce-content {
     padding: 1rem;
-    
+
     h1, h2, h3, h4, h5, h6 {
         margin-bottom: 20px;
     }
@@ -397,41 +431,41 @@ footer {
     h4, h5, h6 {
         font-size: 1.5rem;
     }
-    
+
     img {
         float: left;
     }
-    
+
     a {
         color: #31ca73;
     }
-    
+
     ul, ol {
         padding-left: 20px;
-        
+
         li {
             padding-left: 5px;
-            
+
             a {
                 color: #31ca73;
             }
         }
     }
-    
+
     table {
         width: 100%;
         border: 1px solid #31ca73;
-        
+
         th {
             background: #31ca73;
             color: #fff;
             padding: 10px 20px;
         }
-        
+
         td {
             border: 1px solid #31ca73;
             padding: 5px 15px;
-            
+
             a {
                 color: #31ca73;
             }
@@ -441,7 +475,7 @@ footer {
 
 .newsheader {
     margin-bottom: 20px;
-    
+
     .date {
         display: block;
         font-size: 12px;
@@ -473,7 +507,7 @@ footer {
             display: block;
             font-size: 14px;
             margin-bottom: 10px;
-            
+
             a {
                 color: #31ca73;
             }
@@ -505,30 +539,30 @@ footer {
 .quicklinks,
 .categories-panel {
     margin-bottom: 20px;
-    
+
     ul {
         padding-bottom: 15px;
         border-bottom: 1px solid #333;
-    
+
         li {
             display: block;
             padding: 5px;
-            
+
             &.active,
             &:hover {
-            
+
                 ::before {
                     color: #333;
                 }
             } 
-            
+
             ::before {
                 content: "\00BB";
                 font-size: 20px; 
                 color: #fff;
                 margin-right: 5px;
             }
-            
+
             a {
                 text-decoration: none;
             }
@@ -539,10 +573,10 @@ footer {
 .contactlist {
     float: left;
     width: 100%;
-    
+
     .list {
         margin-bottom: 15px;
-    
+
         iframe {
             border: 1px solid #31ca73;
         }
@@ -572,7 +606,7 @@ footer {
         background-color: #31ca73;
         padding: 10px 20px;
         border-radius: 2px;
-        
+
         &:hover {
             background-color: #009641;
             border-color: #009641;
