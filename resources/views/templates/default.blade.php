@@ -17,7 +17,7 @@
             <div class="col-10 col-lg-5 my-3 pr-0">
                 <a class="logo" href="/">
                     <img class="float-left float-sm-none mr-1" src="/images/logo2.png" alt="Malaya Elementary School" title="Malaya Elementary School" />
-                    <span class="float-left float-sm-none my-1 my-sm-0"><span class="d-block d-sm-inline mb-2 mb-sm-0">Malaya Elementary</span> School</span>
+                    <span class="float-left float-sm-none my-2 my-sm-0"><span class="d-block d-sm-inline mb-2 mb-sm-0">Malaya Elementary</span> School</span>
                 </a>
             </div>
             <div class="col-2 col-lg-7 my-3 px-0 px-sm-3">
@@ -47,10 +47,10 @@ function closeNav() {
 }
 </script>
 {!! $Banner !!}
-<div class="forthrow mb-5">
+<div class="forthrow mb-0 mb-sm-5">
     <div class="container">
         <div class="row">
-            <div class="box col-md-12 pb-5">
+            <div class="box col-md-12 pb-0 pb-sm-5">
                 <div class='row my-3'>
                     <div class='aetinymce-content col-md-9'>
                         {!! $Main !!}

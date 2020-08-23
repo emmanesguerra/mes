@@ -49,6 +49,11 @@ const swiper = new Swiper('.swiper-container', {
     },
 });
 
-if($('#banner').length) {
+if($('#banner').length && $('#banner').css('display') == 'block') {
     $('.forthrow .box').css('margin-top', '-70px');
+    
+    console.log(window.innerWidth);
+    if(window.innerWidth <= 750) {
+        $('.banner-container').css('background-size', 'auto');
+    }
 }

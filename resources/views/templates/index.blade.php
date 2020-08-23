@@ -17,7 +17,7 @@
             <div class="col-10 col-lg-5 my-3 pr-0">
                 <a class="logo" href="/">
                     <img class="float-left float-sm-none mr-1" src="/images/logo2.png" alt="Malaya Elementary School" title="Malaya Elementary School" />
-                    <span class="float-left float-sm-none my-1 my-sm-0"><span class="d-block d-sm-inline mb-2 mb-sm-0">Malaya Elementary</span> School</span>
+                    <span class="float-left float-sm-none my-2 my-sm-0"><span class="d-block d-sm-inline mb-2 mb-sm-0">Malaya Elementary</span> School</span>
                 </a>
             </div>
             <div class="col-2 col-lg-7 my-3 px-0 px-sm-3">
@@ -46,7 +46,7 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-<div id="banner" class="banner">
+<div id="banner" class="banner d-none d-sm-block">
     <div class="banner-container">
         <div class="swiper-container">
             <!-- Additional required wrapper -->
@@ -62,20 +62,20 @@ function closeNav() {
     <div class="container">
         <div class="row">
             <div class="box col-md-12 pb-5">
-                <div class='row my-3'>
-                    <div class='col-md-3 my-2'>
+                <div class='row my-0 my-sm-3'>
+                    <div class='col-md-3 my-2 d-none d-sm-block'>
                         <h3><i class='fas fa-door-open'></i> Accommodating</h3>
                         <p>Helping community</p>
                     </div>
-                    <div class='col-md-3 my-2'>
+                    <div class='col-md-3 my-2 d-none d-sm-block'>
                         <h3><i class='fas fa-graduation-cap'></i>  Graduates</h3> 
                         <p>Teaching leaders</p>
                     </div>
-                    <div class='col-md-3 my-2'>
+                    <div class='col-md-3 my-2 d-none d-sm-block'>
                         <h3><i class='fas fa-award'></i> Awards</h3>
                         <p>Thriving success</p>
                     </div>
-                    <div class='col-md-3 my-2'>
+                    <div class='col-md-3 my-2 d-none d-sm-block'>
                         <h3><i class='fas fa-trophy'></i> Trophy</h3>
                         <p>Building Champions</p>
                     </div>
@@ -95,13 +95,13 @@ function closeNav() {
 <div class="fifthrow">
     <div class="container">
         <div class='row'>
-            <div class='col-md-4 p-5 text-center' style='position: relative'>
+            <div class='col-md-4 mt-5 mt-sm-0 p-3 p-sm-5 text-center' style='position: relative'>
                 <div class='mes sticky-top'>
                     <h2>Malaya Elementary School Quote</h2>
                     <img src='/images/logo2.png' class='m-3' />
                 </div>
             </div>
-            <div class='quotes col-md-8 p-5'>
+            <div class='quotes col-md-8 p-3 p-sm-5'>
                 {!! $Quotes !!}
             </div>
         </div>
