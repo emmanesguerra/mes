@@ -10958,14 +10958,13 @@ nav a.nav-link {
   color: inherit;
 }
 
-.topnav ul {
-  float: right;
-  margin-bottom: 0;
-}
-
 .topnav ul li {
   display: inline;
   padding: 10px;
+}
+
+.topnav ul li:nth-child(1) {
+  padding-left: 0;
 }
 
 .topnav ul li a {
@@ -10995,7 +10994,6 @@ nav a.nav-link {
 
 .header .logo img {
   height: 65px;
-  margin-right: 10px;
 }
 
 .header .logo span {
@@ -11008,6 +11006,40 @@ nav a.nav-link {
 
 .header .logo:hover {
   text-decoration: none;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 23px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 #mainnav .navbar-nav .nav-item .nav-link {
@@ -11036,6 +11068,7 @@ nav a.nav-link {
   float: left;
   width: 100%;
   height: 100%;
+  background-size: 100%;
 }
 
 .banner .banner-container .container {
@@ -11061,7 +11094,6 @@ nav a.nav-link {
   padding: 0;
   margin: 0;
   line-height: 3rem;
-  height: 60px;
   padding-left: 25px;
   font-weight: 900;
 }
@@ -11492,5 +11524,46 @@ footer span a:hover {
 .contactusform .btn:hover {
   background-color: #009641;
   border-color: #009641;
+}
+
+@media screen and (max-width: 600px) {
+  .header .logo {
+    font: 1.5rem "Aref Ruqaa", sans-serif;
+    line-height: 15px;
+  }
+
+  .forthrow .box {
+    padding: 0 1rem;
+    box-shadow: none;
+  }
+
+  .forthrow .box i {
+    float: left;
+    font-size: 2rem;
+    margin-right: 20px;
+  }
+
+  .forthrow .box p {
+    font-size: 16px;
+  }
+
+  .fifthrow {
+    background-size: auto;
+    border-top: 2px solid #009641;
+  }
+
+  .sixthrow {
+    padding-bottom: 0;
+  }
+
+  .sixthrow .newscontainer {
+    padding: 1rem;
+  }
+
+  .sixthrow .subscribe {
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 15px;
+  }
 }
 

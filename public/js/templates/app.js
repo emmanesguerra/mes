@@ -61945,8 +61945,13 @@ var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-
   }
 });
 
-if ($('#banner').length) {
+if ($('#banner').length && $('#banner').css('display') == 'block') {
   $('.forthrow .box').css('margin-top', '-70px');
+  console.log(window.innerWidth);
+
+  if (window.innerWidth <= 750) {
+    $('.banner-container').css('background-size', 'auto');
+  }
 }
 
 /***/ }),
