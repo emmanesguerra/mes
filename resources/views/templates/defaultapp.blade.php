@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 my-3">
-                <span class="mr-5"><i class="far fa-envelope-open mr-2"> </i>emman.esguerra2013@gmail.com</span>
+                <span class="mr-5"><i class="far fa-envelope-open mr-2"> </i>sample.email@gmail.com</span>>
                 <span><i class="fas fa-phone-alt mr-2"> </i>+63 909 1234 567</span>
             </div>
             <div class="col-sm-6 my-3">
